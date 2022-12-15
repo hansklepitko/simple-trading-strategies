@@ -1,6 +1,18 @@
-# simple-trading-strategies
+# Simple Trading Strategies
 
- List of SIMPLE trading strategies with a logic examples in Python.
+This repository contains a collection of simple trading strategies implemented in Python. These strategies are meant to be educational and illustrative, and are not intended for use in real markets.
+
+The strategies in this repository include examples of various types of trading, such as ping-pong trading, delta trading, and other types of algorithmic trading. Each strategy is implemented in Python and includes a brief explanation of how it works.
+
+## Disclaimer
+
+The strategies in this repository are provided for educational and illustrative purposes only. They are not intended for use in real markets, and there is no warranty that they are suitable for trading in real markets. Use these strategies at your own risk.
+
+## License
+
+The code in this repository is released under the MIT License. See the `LICENSE` file for more details.
+
+---
 
 ## Ping-Pong Trading Strategy
 
