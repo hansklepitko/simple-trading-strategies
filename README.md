@@ -1,8 +1,6 @@
 # Simple Trading Strategies
 
-This repository contains three Python scripts for educational purposes. The scripts are based on the "ping-pong" strategy and build upon each other, with the first script serving as the foundation and the second and third scripts extending the strategy with additional factors.
-
-The second script incorporates a moving average, while the third script adds a calculation to average the buy price.
+This repository contains three Python scripts for educational purposes. The scripts are based on the "ping-pong" strategy and build upon each other, with the first script serving as the foundation and the second and third scripts extending the strategy with additional factors. The second script incorporates a moving average, while the third script adds a calculation to average the buy price.
 
 We hope, that these scripts offer a valuable learning opportunity for those interested in paper trading and the use of the "ping-pong" strategy.
 
@@ -137,4 +135,6 @@ Overall, there are many possible ways that the trading strategy used in the scri
 
 ---
 
-This repository contains three Python scripts for educational purposes. The scripts are based on the "ping-pong" strategy and build upon each other, with the first script serving as the foundation and the second and third scripts extending the strategy with additional factors. The second script incorporates a moving average, while the third script adds a calculation to average the buy price. These scripts offer a valuable learning opportunity for those interested in paper trading and the use of the "ping-pong" strategy.
+This repository contains three Python scripts for educational purposes. The scripts are based on the "ping-pong" strategy and build upon each other, with the first script serving as the foundation and the second and third scripts extending the strategy with additional factors. The second script incorporates a moving average, while the third script adds a calculation to average the buy price.
+
+We hope, that these scripts offer a valuable learning opportunity for those interested in paper trading and the use of the "ping-pong" strategy.
