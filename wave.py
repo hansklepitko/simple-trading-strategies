@@ -1,15 +1,32 @@
 import csv
 import time
 import logging
-from collections import deque
 
 # print the welcome message
 print("--- Welcome to Wave Trading. Let's get started! ---\n")
-# set the number of past prices to use in the moving average calculation
-moving_average_window = 240
 
-# create a deque to store the past prices for the moving average calculation
-past_prices = deque(maxlen=moving_average_window)
+# set the number of past prices to use in the moving average calculation
+moving_average_window = 200
+
+# create a list to store the past prices for the moving average calculation
+past_prices = []
+
+# open the CSV file and read the prices from the file
+with open('prices.csv') as csvfile:
+    # create a CSV reader
+    reader = csv.reader(csvfile)
+
+    # read the prices from the CSV file and add them to the list of past prices
+    for row in reader:
+        past_prices.append(float(row[1]))
+
+    # if there are enough past prices to calculate the moving average
+    if len(past_prices) == moving_average_window:
+        # remove the oldest price from the list
+        past_prices.pop(0)
+
+# calculate the initial moving average
+moving_average = sum(past_prices) / len(past_prices)
 
 # create a logger
 logger = logging.getLogger('wave-trades')
@@ -48,15 +65,19 @@ with open('prices.csv') as csvfile:
         timestamp = last_row[0]
         last_price = float(last_row[1])
 
-        # add the last price to the deque of past prices
+        # add the last price to the list of past prices
         past_prices.append(last_price)
 
-        # calculate the moving average
-        moving_average = sum(past_prices) / len(past_prices)
+        # remove the oldest price from the list
+        if len(past_prices) == moving_average_window:
+            past_prices.pop(0)
+
+        # update the moving average using the new price
+        moving_average = (moving_average * (moving_average_window - 1) + last_price) / moving_average_window
 
         # set the buy and sell thresholds based on the moving average
-        buy_threshold = moving_average * 0.99
-        sell_threshold = moving_average * 1.01
+        buy_threshold = moving_average * 0.995
+        sell_threshold = moving_average * 1.005
 
         # get the current time
         current_time = time.strftime("%Y-%m-%d %H:%M")
