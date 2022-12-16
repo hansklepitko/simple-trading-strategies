@@ -22,7 +22,7 @@ This Python script implements a simple ping-pong trading strategy that reads pri
 
 - Python 3.x - The `csv` and `time` modules
 - A CSV file with prices, in the format `timestamp,last_price`
-  
+
 To use the script, run the following command:
 
 `python3 ping_pong.py`
@@ -118,6 +118,12 @@ There are several variables in the script that are configurable:
 * `buy_threshold` and `sell_threshold`: These variables determine the buy and sell thresholds based on the moving average of the past prices. The script currently sets the buy threshold to 95% of the moving average and the sell threshold to 105% of the moving average, but these values can be changed to adjust the sensitivity of the algorithm. For example, increasing the buy and sell thresholds to 97% and 103% respectively would make the algorithm less sensitive to small fluctuations in the price and may reduce the number of trades it makes.
 
 * `avg_buy_price`: This variable tracks the average price at which the algorithm buys assets. The script sets this variable to 0 initially, but it is updated each time the algorithm buys assets. This variable is used to determine whether the last price is high enough to sell all assets, and it can be changed to adjust the sensitivity of the sell decision. For example, increasing the avg_buy_price would make the algorithm more likely to sell all assets, while decreasing it would make the algorithm more conservative and less likely to sell.
+
+### Example
+
+![wave-chart](waves-chart.png)
+
+The line chart shows possible signals, based on a 4h moving average and +/-3% thresholds. The algorithm could execute up to five trades in this period, averaging the bid price of two trades and then selling all at the upper threshold with a profit step.
 
 ### Suggestions
 
