@@ -121,7 +121,7 @@ There are several variables in the script that are configurable:
 
 ### Example
 
-![wave-chart](waves-chart.png)
+![wave-chart](/wave-chart.png)
 
 The line chart shows possible signals, based on a 4h moving average and +/-3% thresholds. The algorithm could execute up to five trades in this period, averaging the bid price of two trades and then selling all at the upper threshold with a profit step.
 
