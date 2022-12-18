@@ -1,18 +1,19 @@
 import csv
-import time
 import logging
+import time
+from datetime import datetime
 
 # print the welcome message
 print("--- Welcome to Wave Trading. Let's get started! ---\n")
 
 # set the number of past prices to use in the moving average calculation
-moving_average_window = 200
+num_prices_for_moving_average = 200
 
 # create a list to store the past prices for the moving average calculation
 past_prices = []
 
 # open the CSV file and read the prices from the file
-with open('prices.csv') as csvfile:
+with open('/home/ksmd/stats/csv/btc-usd-coingecko.csv') as csvfile:
     # create a CSV reader
     reader = csv.reader(csvfile)
 
@@ -21,7 +22,7 @@ with open('prices.csv') as csvfile:
         past_prices.append(float(row[1]))
 
     # if there are enough past prices to calculate the moving average
-    if len(past_prices) == moving_average_window:
+    if len(past_prices) == num_prices_for_moving_average:
         # remove the oldest price from the list
         past_prices.pop(0)
 
@@ -50,7 +51,7 @@ total_value = 0
 num_assets = 0
 
 # open the CSV file
-with open('prices.csv') as csvfile:
+with open('/home/ksmd/stats/csv/btc-usd-coingecko.csv') as csvfile:
     # create a CSV reader
     reader = csv.reader(csvfile)
 
@@ -69,11 +70,11 @@ with open('prices.csv') as csvfile:
         past_prices.append(last_price)
 
         # remove the oldest price from the list
-        if len(past_prices) == moving_average_window:
+        if len(past_prices) == num_prices_for_moving_average:
             past_prices.pop(0)
 
         # update the moving average using the new price
-        moving_average = (moving_average * (moving_average_window - 1) + last_price) / moving_average_window
+        moving_average = (moving_average * (num_prices_for_moving_average - 1) + last_price) / num_prices_for_moving_average
 
         # set the buy and sell thresholds based on the moving average
         buy_threshold = moving_average * 0.995
