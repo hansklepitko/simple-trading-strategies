@@ -129,7 +129,7 @@ The line chart shows possible signals, based on a 4h moving average and +/-3% th
 
 Few possible ways that the trading strategy used in the script could be improved:
 
-* Use more data in the moving average calculation: The script currently uses the last 10 prices to calculate the moving average, but this may not be enough data to accurately represent market trends. Increasing the size of the moving average window to include more prices could improve the accuracy of the moving average and the buy and sell thresholds.
+* 
 
 * Use additional indicators to make trading decisions: The script currently relies only on the moving average and buy and sell thresholds to make trading decisions, but there are many other indicators that could be used to improve the accuracy of the strategy. For example, the script could use the relative strength index (RSI) or the moving average convergence divergence (MACD) to identify overbought or oversold conditions and make more informed trades.
 
@@ -143,4 +143,4 @@ Overall, there are many possible ways that the trading strategy used in the scri
 
 This repository contains three Python scripts for educational purposes. The scripts are based on the "ping-pong" strategy and build upon each other, with the first script serving as the foundation and the second and third scripts extending the strategy with additional factors. The second script incorporates a moving average, while the third script adds a calculation to average the buy price.
 
-We hope, that these scripts offer a valuable learning opportunity for those interested in paper trading and the use of the "ping-pong" strategy.
+We hope, that these scripts offer a valuable learning opportunity for those interested in Python, paper trading and the use of the "ping-pong" strategy. The code can and should be extended with additional work. Other libraries can be added to scripts, as `pandas`, `pandas-ta`, `matplotlib`, `statistics`, `scipy` and more.
