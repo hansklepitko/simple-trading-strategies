@@ -3,8 +3,8 @@ import time
 import logging
 
 # set the percentage thresholds (these can be adjusted as needed)
-buy_threshold_percent = -2  # 5% below last price
-sell_threshold_percent = 2  # 5% above last price
+buy_threshold_percent = -2  # 2% below last price
+sell_threshold_percent = 2  # 2% above last price
 
 # create a logger
 logger = logging.getLogger('trades')
